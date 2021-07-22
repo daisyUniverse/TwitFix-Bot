@@ -4,9 +4,11 @@
 
 Share your videos faster
 
-
+I have a version of this bot running on the same server that runs TwitFix, you can add it to your server by [Clicking Here](https://discord.com/api/oauth2/authorize?client_id=867670280054505522&permissions=10240&scope=bot)
 
 This is a small discord bot that scans messages for twitter links, and on finding one, it tries various methods to determine if its a video link, if it is, it kills the messages embed, and replies to it with a fxtwitter link, fixing the video embed
+
+![TwitFixBot](TwitFixBot.gif)
 
 
 

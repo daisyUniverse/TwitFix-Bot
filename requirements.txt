@@ -1,4 +1,5 @@
 discord
 youtube_dl
+dnspython
 pymongo
 twitter

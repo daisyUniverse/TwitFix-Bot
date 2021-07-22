@@ -6,8 +6,8 @@ After=network.target
 User=robin
 Group=robin
 WorkingDirectory=/home/robin/twitfixbot
-Environment="PATH=/home/robin/twitfixbot/twitfixenv/bin"
-ExecStart=/home/robin/twitfixbot/twitfixenv/bin/python twitfixbot.py
+Environment="PATH=/home/robin/twitfixbot/twitfixbotenv/bin"
+ExecStart=/home/robin/twitfixbot/twitfixbotenv/bin/python twitfixbot.py
 Restart=always
 RestartSec=15
 RestartPreventExitStatus=0
