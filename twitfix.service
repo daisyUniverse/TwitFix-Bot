@@ -1,0 +1,17 @@
+[Unit]
+Description=Service file for TwitFixBot
+After=network.target
+
+[Service]
+User=robin
+Group=robin
+WorkingDirectory=/home/robin/twitfixbot
+Environment="PATH=/home/robin/twitfixbot/twitfixenv/bin"
+ExecStart=/home/robin/twitfixbot/twitfixenv/bin/python twitfixbot.py
+Restart=always
+RestartSec=15
+RestartPreventExitStatus=0
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
