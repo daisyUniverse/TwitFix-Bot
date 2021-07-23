@@ -163,14 +163,28 @@ class MyClient(discord.Client):
             if cached_vnf == None: # Is this link not in the cache?
                 vnf = link_to_vnf(tweet) # Get the tweet info from the API to determine if it's a video
                 if vnf is not None:
-                    reply = tweet.replace('https://twitter.com', 'https://fxtwitter.com')
+                    if msg.startswith('>>'):
+                        await message.edit(suppress=True)
+                        await message.reply(vnf['url'], mention_author=False)
+                        add_vnf_to_link_cache(tweet, vnf)
+                        print("Replaced uncached video link with direct link")
+                    else:
+                        reply = tweet.replace('https://twitter.com', 'https://fxtwitter.com')
+                        await message.edit(suppress=True)
+                        await message.reply(reply, mention_author=False)
+                        add_vnf_to_link_cache(tweet, vnf) # Add the tweet to the link cache
+                        print("Replaced uncached video link with TwitFix link")
+                        
+            else:
+                if msg.startswith('>>'):
+                    await message.edit(suppress=True)
+                    await message.reply(cached_vnf['url'], mention_author=False)   
+                    print("Replaced cached video link with direct link") 
+                else:
+                    reply = tweet.replace('https://twitter.com', 'https://fxtwitter.com') # Otherwise, just assume the link is a video and replace the embed
                     await message.edit(suppress=True)
                     await message.reply(reply, mention_author=False)
-                    add_vnf_to_link_cache(tweet, vnf) # Add the tweet to the link cache
-            else:
-                reply = tweet.replace('https://twitter.com', 'https://fxtwitter.com') # Otherwise, just assume the link is a video and replace the embed
-                await message.edit(suppress=True)
-                await message.reply(reply, mention_author=False)
+                    print("Replaced cached video link with TwitFix link")
 
 
         if str(message.author.id) == config['config']['admin']: 
