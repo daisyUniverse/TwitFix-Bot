@@ -4,7 +4,23 @@
 
 Share your videos faster
 
-I have a version of this bot running on the same server that runs TwitFix, you can add it to your server by [Clicking Here](https://discord.com/api/oauth2/authorize?client_id=867670280054505522&permissions=10240&scope=bot)
+# !! THIS PROJECT IS DISCONTINUED !!
+
+This bot was always a bit of a mess, and people have been joining it to servers despite it not having been running for several months at this point, so I just wanted to update the readme to reflect the fact that this bot is no longer in active development and is not being hosted anywhere. The original TwitFix project is still going strong, but this bot implementation has always been pretty bad, so I have decided to drop it in favor of other, better bots, here's a few that I found with just a quick search on github alone:
+
+[fxtwitter-bot by RedDaedalus](https://github.com/RedDaedalus/fxtwitter-bot)
+
+[fxtwitter-discord by Nsttt](https://github.com/Nsttt/fxtwitter-discord)
+
+[tweetFix by noogai15](https://github.com/noogai15/tweetFix)
+
+[MediaFixer by Yber0](https://github.com/Yber0/MediaFixer)
+
+[fxthis by brunocrocomo](https://github.com/brunocrocomo/fxthis)
+
+There are probably more floating around, if anyone has any they'd like to submit to be added to this list, please leave an issue on the repo to alert me of this
+
+# Original Readme
 
 This is a small discord bot that scans messages for twitter links, and on finding one, it tries various methods to determine if its a video link, if it is, it kills the messages embed, and replies to it with a fxtwitter link, fixing the video embed
 
